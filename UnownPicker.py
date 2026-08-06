@@ -79,11 +79,11 @@ async def health_check():
     except Exception as e:
         print(e)
 
-@tasks.loop(minutes=1)
+@tasks.loop(hours=24)
 async def change_icon():
     global filename
     guild = bot.get_guild(YOUR_SERVER_ID)
-    if random.randint(1, 5) == 1:
+    if random.randint(1, 20) == 1:
         if filename == "ShinyUnownGIF.gif":
             print("Already Shiny")
         else:
